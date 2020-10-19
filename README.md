@@ -44,32 +44,42 @@
 > truffle develop
 
 #you should see it creating 10 address and a new node JS console is seen for interaction with chain
+
 truffle (develop)>
 
 #migrate /deploy your contracts, they are just aliases
+
 truffle (develop)> migrate
 
 #your contracts should get deployed
 ______________________________________
 
 #interact with the deployed contract
+
 truffle(develop)> let myerc = await MyERC20.deployed()
+
 undefined
 
 #undefined is fine. Its expected
 
 #check a few token contract functions
+
 truffle(develop)> myerc.symbol()
+
 'MY'
 
 #the blockchain simulator comes with 10 supported address for testing
+
 truffle(develop)> accounts
+
 [
-  <you will see addresses here>
+  #you will see addresses here
 ]
 
 #check the token balance of the token deployer
+
 truffle(develop)> myerc.balanceOf(accounts[0])
+
 BN {
   negative: 0,
   words: [ 2000, <1 empty item> ],
@@ -78,7 +88,9 @@ BN {
 }
 
 #check the token balance of another account
+
 truffle(develop)> myerc.balanceOf(accounts[1])
+
 BN {
   negative: 0,
   words: [ 0, <1 empty item> ],
@@ -87,15 +99,17 @@ BN {
 }
 
 #tranfer the token to another address
+
 truffle(develop)> myerc.transfer(accounts[1], 1)
+
 {
-  tx: '<tx hash here>',
+  tx: '#tx hash here',
   receipt: {
-		<receipt of the transaction here>
+		#receipt of the transaction here
   },
   logs: [
     {
-		<event information of the contract here>
+		#event information of the contract here
     }
   ]
 }
